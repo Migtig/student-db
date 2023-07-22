@@ -1,0 +1,327 @@
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic (CALLED IN ANOTHER FILE)
+	- Normalize
+	- Box sizing
+	- Media width
+# Base
+	- Typography
+	- Elements
+	- Links
+# Layouts
+# Components
+	- Header
+	- Main
+	- Footer
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+:root {
+    --border-radius: 0.5rem;
+    --pri-bg-colour: #f5deb3;
+    --pri-border-colour: #a8936a;
+    --sec-bg-colour: #fec5bb;
+    --sec-border-colour: #501816;
+
+
+    --pri-font-colour: #000000;
+    --sec-font-colour: #e6e6fa;
+
+    --pri-font: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+    --sec-font: Arial, Helvetica, sans-serif;
+    
+}
+
+/* Typography
+--------------------------------------------- */
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../../fonts/CormorantGaramond-Regular.woff2') format('woff2'),
+        url('../../fonts/CormorantGaramond-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../../fonts/CormorantGaramond-SemiBold.woff2') format('woff2'),
+        url('../../fonts/CormorantGaramond-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cormorant Garamond';
+    src: url('../../fonts/CormorantGaramond-Light.woff2') format('woff2'),
+        url('../../fonts/CormorantGaramond-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../fonts/Cinzel-Bold.woff2') format('woff2'),
+        url('../../fonts/Cinzel-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../fonts/Cinzel-Medium.woff2') format('woff2'),
+        url('../../fonts/Cinzel-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../fonts/Cinzel-Regular.woff2') format('woff2'),
+        url('../../fonts/Cinzel-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Cinzel';
+    src: url('../../fonts/Cinzel-SemiBold.woff2') format('woff2'),
+        url('../../fonts/Cinzel-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+	color: #000000;
+    background-color: hsl(2, 57%, 40%);
+    background-image: repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px, transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px, transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+    repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px, transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2;
+}
+
+main {
+    position: relative;
+    min-width: 80vw;
+    max-width: 600px;
+    min-height: 256px;
+    background-color: #ebebeb;
+    margin: 6rem auto;
+    padding: 0.5rem 1.5rem;
+    z-index: 1;
+    border-radius: var(--border-radius);
+}
+
+h1 {
+    color: #000000;
+    font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 3rem;
+    line-height: 1.2;
+    margin: 0.5rem 0 0.5rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #000000;
+    font-family: 'Cormorant Garamond', 'Times New Roman', Times, serif;
+    font-weight: 600;
+    font-size: 2rem;
+    line-height: 1;
+    margin-top: 2rem;
+    padding: 0 0 10px 12px;
+    border-bottom: solid 2px var(--pri-font-colour);
+}
+
+p {
+	color: black;
+}
+
+/* ------------ HEADER ------------ */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: lavender;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: 10vw 1fr 1fr 10vw;
+    align-items: flex-end;
+}
+
+
+.assignment-title {
+    grid-column: 2 / 3;
+    justify-self: start;
+}
+
+.assignment-by {
+    grid-column: 3 / 4;
+    justify-self: end;
+    border: none;
+    padding: 0;
+    margin: auto 0 auto;
+}
+
+
+
+/* ------------ MAIN ------------ */
+
+code {
+    border: dotted 2px whitesmoke;
+    padding: 4px 16px 4px;
+    background-color: #000000;
+    color: #00cd00;
+}
+
+.tod-icon {
+    position: absolute;
+    top: 6rem;
+    right: 2rem;
+    z-index: 10;
+    max-height: 3rem;
+    max-width: 3rem;
+}
+
+form {
+    background-color: var(--sec-bg-colour);
+    border: solid 2px var(--sec-border-colour);
+    border-radius: var(--border-radius);
+    padding: 8px;
+    margin: 0 auto;
+    width: 520px;
+}
+
+fieldset {
+    border: var(--sec-border-colour) solid 2px;
+    border-radius: var(--border-radius);
+    margin: 0.5rem auto;
+}
+
+form h2 {
+    font-size: 2rem;
+}
+
+form legend {
+    font-size: 1.5rem;
+    padding: 0 1rem;
+}
+
+form p {
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--sec-font);
+    color: var(--pri-font-colour);
+    padding: 0;
+    margin: 0;
+}
+
+form input[type=text],
+form input[type=password],
+form select {
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.2rem;
+    font-size: 1.2rem;
+    font-family: var(--sec-font);
+    border: none;
+    box-shadow: inset 0 0 3px #2e2e2e;
+    border-radius: 4px;
+    padding: 4px 8px;
+    background-color: #ffffff;
+}
+
+
+form input[type=submit] {
+    background-color: var(--sec-border-colour);
+    color: var(--sec-font-colour);
+    width: 100%;
+    padding: 8px 32px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+blockquote {
+    background-color: var(--sec-font-colour);
+    border: solid 2px var(--sec-border-colour);
+    border-radius: var(--border-radius);
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: var(--sec-font);
+    padding: 2rem;
+}
+
+.content-nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.content-nav a,
+.content-nav a:visited {
+    color: var(--pri-font-colour);
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 0.5rem 2rem;
+}
+
+.content-nav a:hover,
+.content-nav a:active {
+    color: var(--sec-bg-colour);
+    background-color: var(--sec-border-colour);
+}
+
+table {
+    border: solid 2px var(--sec-border-colour);
+    padding: 1rem;
+    margin: 1rem 2rem;
+    border-collapse: collapse;
+
+}
+
+table th {
+    border: solid 1px var(--sec-border-colour);
+    border-bottom: solid 2px var(--sec-border-colour);
+    background-color: var(--sec-bg-colour);
+    padding: 0 1rem;
+}
+
+table td {
+    border: solid 1px var(--pri-border-colour);
+    padding: 0.5rem;
+}
+
+.error {
+    color: #ae0000;
+}
+
+.success {
+    color: #009300;
+}
